@@ -1,4 +1,5 @@
 # Count Primes
+import math
 class Solution(object):
     def countPrimes(self, n):
         if n < 2:
