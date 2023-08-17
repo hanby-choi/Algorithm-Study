@@ -1,4 +1,4 @@
-# 쇠막대기 - 스택, 문자열
+# 쇠막대기: 스택, 문자열
 import sys
 input = sys.stdin.readline
 stick = input().rstrip()

@@ -1,4 +1,4 @@
-# 크레인 인형뽑기 게임 - 스택
+# 크레인 인형뽑기 게임: 스택
 def solution(board, moves):
     length = len(board)
     stack = []

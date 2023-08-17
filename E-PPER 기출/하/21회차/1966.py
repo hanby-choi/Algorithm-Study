@@ -1,4 +1,4 @@
-# 프린터 큐 - 구현, 큐
+# 프린터 큐: 구현, 큐
 import sys
 from collections import deque 
 input = sys.stdin.readline
