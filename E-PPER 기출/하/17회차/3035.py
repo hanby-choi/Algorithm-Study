@@ -1,4 +1,4 @@
-# 스캐너 - 동적 배열
+# 스캐너: 동적 배열
 import sys
 input = sys.stdin.readline
 r, c, zr, zc = map(int, input().split())

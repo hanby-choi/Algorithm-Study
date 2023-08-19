@@ -1,4 +1,4 @@
-# 팰린드롬수 - 구현, 문자열
+# 팰린드롬수: 구현, 문자열
 import sys
 input = sys.stdin.readline
 while True:
