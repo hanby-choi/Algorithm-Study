@@ -1,13 +1,10 @@
 import sys
-from collections import deque 
 input = sys.stdin.readline
 n, k = map(int, input().split())
-arr = deque([i + 1 for i in range(n)])
+arr = [i + 1 for i in range(n)]
+index = 0
 ans = []
-while arr:
-	for i in range(k-1):
-		arr.append(arr.popleft())
-	ans.append(str(arr.popleft()))
-print('<', end='')
-print(', '.join(ans), end ='')
-print('>')	
+while arr: # for i in range(n)로도 가능
+	index = (index + k-1) % len(arr) 
+	ans.append(str(arr.pop(index)))
+print('<', ', '.join(ans), '>', sep='')
