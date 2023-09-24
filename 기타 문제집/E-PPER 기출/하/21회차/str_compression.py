@@ -17,3 +17,17 @@ def solution(src):
 	return ans
 src = sys.stdin.readline().rstrip()
 print(solution(src))
+
+def solution(src):
+	ans = ''
+	if src[0] == '1':
+		ans += '1'
+	cnt = 0
+	for i in range(len(src)-1):
+		if src[i] != src[i+1]:
+			ans += chr(ord('A') + cnt)
+			cnt = 0
+		else:
+			cnt += 1
+	ans += chr(ord('A') + cnt)
+	return ans 

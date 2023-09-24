@@ -19,3 +19,17 @@ def solution(n, s, e):
 			ans += 1
 	return ans
 print(solution(n, s, e))
+
+"""def solution(n, s, e):
+	student = [(s[i], e[i]) for i in range(n)]
+	student.sort(key=lambda x: x[1])
+	e1 = e2 = ans = 0
+	for st in student:
+		if e1 <= st[0]:
+			e1 = st[1]
+			ans += 1
+		elif e2 <= st[0]:
+			e2 = e1
+			e1 = st[1]
+			ans += 1
+	return ans"""

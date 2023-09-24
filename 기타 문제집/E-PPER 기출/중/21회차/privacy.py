@@ -37,3 +37,14 @@ def solution(today, terms, privacies):
         cnt += 1
     return answer
 """
+
+def to_days(today):
+    yy, mm, dd = map(int, today.split('.'))
+    return yy*12*28 + mm*28 + dd
+
+def solution(today, terms, privacies, result):
+    months = { t[0]: int(t[2:]) * 28 for t in terms}
+    today = to_days(today)
+    expire = [ i+1 for i, privacy in enumerate(privacies) 
+              if to_days(privacies[:-2]) + months[privacy[-1]] <= today]
+    return expire
