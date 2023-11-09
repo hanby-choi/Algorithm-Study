@@ -1,7 +1,13 @@
-N, B = map(int, input().split())
-ans = ''
-arr = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-while N:
-    ans += arr[N%B]
-    N //= B
-print(ans[::-1])
+import sys
+input = sys.stdin.readline
+
+def convert(n, b):
+	arr = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	ans = ''
+	while n:
+		ans += arr[n % b]
+		n //= b
+	return ans[::-1]
+
+n, b = map(int, input().split())
+print(convert(n, b))
