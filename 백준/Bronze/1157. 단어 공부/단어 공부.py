@@ -1,10 +1,12 @@
-import sys
-input = sys.stdin.readline
-from collections import Counter
+word = input().upper()
+word_list = list(set(word))
+lst = []
 
-word = input().strip().upper()
-cnt = Counter(word).most_common()
-if len(cnt) != 1 and cnt[0][1] == cnt[1][1]:
-	print('?')
+for i in word_list:
+    count = word.count(i)
+    lst.append(count)
+
+if lst.count(max(lst))>= 2:
+    print("?")
 else:
-	print(cnt[0][0])
+    print(word_list[lst.index(max(lst))])
