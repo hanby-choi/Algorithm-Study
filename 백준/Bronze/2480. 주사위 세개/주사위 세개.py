@@ -1,18 +1,13 @@
 import sys
 input = sys.stdin.readline
-dices = list(map(int, input().split()))
-dic = {}
-for d in dices:
-    if d in dic:
-        dic[d] += 1
-    else:
-        dic[d] = 1
-if len(dic) == 1:
-    print(10000 + dices[0] * 1000)
-elif len(dic) == 2:
-    for k, v in dic.items():
-        if v == 2:
-            print(1000 + k * 100)
+a, b, c = map(int, input().split())
+if a == b == c:
+    print(10000+a*1000)
+elif a == b:
+    print(1000+a*100)
+elif a == c:
+    print(1000+a*100)
+elif b == c:
+    print(1000+b*100)
 else:
-    m = max(dices)
-    print(m * 100)
+    print(100 * max(a,b,c))
