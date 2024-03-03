@@ -1,27 +1,15 @@
-import sys
-input = sys.stdin.readline
+from itertools import combinations
 
-def backtracking(n, length, temp):
-	global count
-	if len(temp) == length:
-		count += 1
-		if count == n:
-			for num in temp:
-				print(num, end='')
-			exit()
-		return
-	for i in range(0, 10):
-		if len(temp) == 0 or temp[-1] > i:
-			temp.append(i)
-			backtracking(n, length, temp)
-			temp.pop()
+N = int(input())
 
-n = int(input())
-count = -1
-if n <= 9:
-	print(n)
-else:
-	for i in range(1, 11): # 길이가 1~10인 수열 
-		temp = []
-		backtracking(n, i, temp)
+result = []
+for i in range(1, 11):
+	for j in combinations(range(10), i):
+		num = ''.join(list(map(str, reversed(list(j)))))
+		result.append(int(num))
+
+result.sort()
+if N >= len(result):
 	print(-1)
+else:
+	print(result[N])
