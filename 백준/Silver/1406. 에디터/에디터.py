@@ -14,6 +14,5 @@ while t:
 	elif cmd[0] == 'P':
 		left.append(cmd[2])
 	t -= 1
-ans = left + right[::-1]
-for a in ans:
-	print(a, end='')
+print(''.join(left), end='')
+print(''.join(right[::-1]))
