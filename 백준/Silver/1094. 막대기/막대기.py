@@ -1,13 +1,8 @@
 import sys
 input = sys.stdin.readline
 x = int(input())
-sticks = [64]
-total = 64
-while x < total:
-	part = int(sticks.pop() / 2)
-	sticks.append(part)
-	if (total - part) >= x:
-		total -= part
-	else:
-		sticks.append(part) 
-print(len(sticks))
+cnt = 0
+for i in range(7): # 64는 2의 6승이므로 1000000 - 7자리 중 1이 몇 개인지 
+	if x & (1 << i):
+		cnt += 1
+print(cnt)
