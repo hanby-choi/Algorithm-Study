@@ -1,7 +1,8 @@
 import sys
 input = sys.stdin.readline
-cnt = int(input())
-arr = list(map(int, input().split()))
-def findN(cnt, arr):
-	return max(arr) * min(arr)
-print(findN(cnt, arr))
+n = int(input())
+nums = sorted(list(map(int, input().split())))
+if len(nums) % 2 == 0:
+    print(nums[0] * nums[-1])
+else:
+    print(nums[len(nums) // 2] ** 2)
