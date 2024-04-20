@@ -1,15 +1,12 @@
 def findMin(num):
-    b_num = bin(num)[2:][::-1]
-    cnt = 0
-    for b in b_num:
-        if b == '0':
-            break
-        else:
-            cnt += 1
-    if cnt < 2:
+    if num % 2 == 0:
         return num + 1
-    else:
-        return num + 2 ** (cnt-1)
+    b_num = '0' + bin(num)[2:]
+    idx = b_num.rfind('0')
+    b_num = list(b_num)
+    b_num[idx] = '1'
+    b_num[idx + 1] = '0'
+    return int(''.join(b_num), 2)
     
 def solution(numbers):
     answer = []
